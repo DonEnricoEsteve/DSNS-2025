@@ -18,39 +18,51 @@ The data for two of the 42 participants can be found in the following link, for 
 Download the data and create the following directory structure:  
 ### Directory Structure:   
 ├───Main _Folder  
-   │   dsns_script.m  
-   ├───TFR_DSNS  
-   ├───sub_004  
-      ├───TFR_within  
-      │   dataorig_minus_ERF.mat  
-   └───sub_005  
-      ├───TFR_within  
-      │   dataorig_minus_ERF.mat  
+&emsp;│   dsns_script.m  
+&emsp;├───TFR_DSNS  
+&emsp;├───sub_004  
+&emsp;&emsp;├───TFR_within  
+&emsp;&emsp;│   dataorig_minus_ERF.mat  
+&emsp;└───sub_005  
+&emsp;&emsp;├───TFR_within  
+&emsp;&emsp;│   dataorig_minus_ERF.mat  
   
 ### Frequency Analysis Implementation Steps:  
   
-_Changes for frequency analysis implementation:_  
+   _Changes for frequency analysis implementation:_  
    * Path variables: path_ft, path_files, datapath, datafile, savefile.  
-   * Subject folder names:  
-% Define subjects and trigger values  
-subjects = {};  
-ranges = [3:16, 18:19, 21:22, 25:29, 31:34, 36:37, 39:41, 43:45, 47, 49:54];  
-for i = ranges  
-    subjects{end+1} = sprintf('sub_%03d', i);  
-end  
+   * Subject folder names:    
+      ''' matlab
+         % Define subjects and trigger values  
+         subjects = {};  
+         ranges = [3:16, 18:19, 21:22, 25:29, 31:34, 36:37, 39:41, 43:45, 47, 49:54];  
+         for i = ranges  
+             subjects{end+1} = sprintf('sub_%03d', i);  
+         end
+      ''' 
 
-1.	Prior to frequency implementation make sure to create an induced data set, a subtraction of the epoched data set and the average evoked response for each condition per subject.  
-2.	Run the initialization, comment out the % Atlas for reference part till end of initialization (this part is used for cluster analysis).   
-3.	Extract baseline and post-stimulus activity and preform a fourier transform on the data, using the "calculate_freq" function.   
+1.	Prior to frequency implementation make sure to create an induced data set, a subtraction of the epoched data set and the average evoked response for each condition per subject.
+   
+3.	Run the initialization, comment out the % Atlas for reference part till end of initialization (this part is used for cluster analysis).
+   
+4.	Extract baseline and post-stimulus activity and preform a fourier transform on the data, using the "calculate_freq" function.
+   
 _Notes_:   
 * Baseline and post-stimulus frequency analysis are done seperately by commenting and uncommenting the "Truncate baseline data" and "Preform baseline" sections in alternating manner.  
-* Make sure post-stimulus variable is saved as "freq" while baseline variable is saved as "freqbase" in the end of the function. "savefile" variable is changed to "freq_allcons.mat" or "freq_allconsbaseline.mat" respectively.  
-4.	Concatenate the analysed post-stimulus and baseline data of all subjects using the "concatenate_freqs " function. "datafile" and "savefile" variables change accordingly.   
-_Note_: make sure that all variables while concatenating baseline data have the "freqbase" pattern in the variable name while the post-stimulus variables contain "freq".  
-5.	Load baseline and post-stimulus concatenated data for normalization.   
-6.	Normalize the induced post-stimulus data using "extract_2D_power" function, take the average power across all channels per frequency and then get the average power for a specific frequency band specified as an input to the function.  
+* Make sure post-stimulus variable is saved as "freq" while baseline variable is saved as "freqbase" in the end of the function. "savefile" variable is changed to "freq_allcons.mat" or "freq_allconsbaseline.mat" respectively.
+  
+4.	Concatenate the analysed post-stimulus and baseline data of all subjects using the "concatenate_freqs " function. "datafile" and "savefile" variables change accordingly.
+     
+_Note_: make sure that all variables while concatenating baseline data have the "freqbase" pattern in the variable name while the post-stimulus variables contain "freq".
+  
+6.	Load baseline and post-stimulus concatenated data for normalization.
+   
+8.	Normalize the induced post-stimulus data using "extract_2D_power" function, take the average power across all channels per frequency and then get the average power for a specific frequency band specified as an input to the function.
+   
 _Note_: result should be used in repeated measures ANOVA.   
-7.	Plot the average power spectrum across all subjects for specific condition groups.   
+
+10.	Plot the average power spectrum across all subjects for specific condition groups.
+    
 _Note_: "condGroups" variable contains the indices of the conditions listed in "trigVal". Changing the "condGroups" variable requires also changing  " customNames" according to the conditions' groups.  
 
 trigVal: 8 – "oddball"  
