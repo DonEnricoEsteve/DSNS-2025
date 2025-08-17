@@ -21,11 +21,11 @@ Download the data and create the following directory structure:
    │   dsns_script.m  
    ├───TFR_DSNS  
    ├───sub_004  
-     ├───TFR_within  
-     │   dataorig_minus_ERF.mat  
+      ├───TFR_within  
+      │   dataorig_minus_ERF.mat  
    └───sub_005  
-     ├───TFR_within  
-     │   dataorig_minus_ERF.mat  
+      ├───TFR_within  
+      │   dataorig_minus_ERF.mat  
   
 ### Frequency Analysis Implementation Steps:  
   
