@@ -145,7 +145,7 @@ toc
 function contatenate_freqs(path_files, subjects)
 
     % Initialize cell
-    freq_across = {};
+    freqbase_across = {};
 
     % Load within-subject ERF
     for sub = 1:length(subjects)
