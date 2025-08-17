@@ -19,28 +19,28 @@ The data for two of the 42 participants can be found in the following link, for 
 
 Download the data and create the following directory structure:  
 ├───Main _Folder  
-&emsp; │   dsns_script.m  
+&emsp;│   dsns_script.m  
 &emsp;├───TFR_DSNS  
 &emsp;├───sub_004  
 &emsp;&emsp;├───TFR_within  
-&emsp;&emsp; │   dataorig_minus_ERF.mat  
+&emsp;&emsp;│   dataorig_minus_ERF.mat  
 &emsp;└───sub_005  
 &emsp;&emsp;├───TFR_within  
-&emsp;&emsp; │   dataorig_minus_ERF.mat  
+&emsp;&emsp;│   dataorig_minus_ERF.mat  
   
 ### Frequency Analysis Implementation Steps:  
   
-   _Changes for frequency analysis implementation:_  
-   * Path variables: path_ft, path_files, datapath, datafile, savefile.  
-   * Subject folder names:    
-      '''
-         % Define subjects and trigger values  
-         subjects = {};  
-         ranges = [3:16, 18:19, 21:22, 25:29, 31:34, 36:37, 39:41, 43:45, 47, 49:54];  
-         for i = ranges  
-             subjects{end+1} = sprintf('sub_%03d', i);  
-         end
-      ''' 
+     _Changes for frequency analysis implementation:_  
+     * Path variables: path_ft, path_files, datapath, datafile, savefile.  
+     * Subject folder names:    
+        '''
+           % Define subjects and trigger values  
+           subjects = {};  
+           ranges = [3:16, 18:19, 21:22, 25:29, 31:34, 36:37, 39:41, 43:45, 47, 49:54];  
+           for i = ranges  
+               subjects{end+1} = sprintf('sub_%03d', i);  
+           end
+        ''' 
 
 1.	Prior to frequency implementation make sure to create an induced data set, a subtraction of the epoched data set and the average evoked response for each condition per subject.
    
