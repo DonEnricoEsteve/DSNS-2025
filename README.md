@@ -1,10 +1,10 @@
-### Rationale and Objectives  
+# Rationale and Objectives  
 In this project we aim to characterize sensor-level oscillatory activity from lag-modulated, repeated presentation of high-caloric food, compared with positive and neutral stimuli that respectively possess and lack perceptual salience.  
 
-### Assumptions and Hypotheses   
+# Assumptions and Hypotheses   
 Given prior discoveries (Codispoti et al., 2023) it is assumed that salient stimuli will exhibit enhanced desynchronization across repeated presentations, indicating larger cortical excitability.  
 
-### Data Description:  
+# Data Description:  
 Each participant from the 42 participants in the study was shown image repetitions.   
 There were 18 conditions in the experiment, and images were categorized into 3 main semantic categories (food, positive and neutral). Each image was shown twice, with varying lags between repetitions (short, medium and long). The participants' brain activity was recorded using an MEG 4D-Neuroimaging system.   
 Recordings were sampled at a rate of 1017 Hz and online band-pass filtered from 1–400 Hz. Data was preprocessed as follows: trial definition, line noise and artifact removal, low-pass filtering at 90 Hz, and ICA. The data was epoched in the time range of -0.3-0.8 s relative to event/stimuli onset.   
@@ -32,7 +32,7 @@ Download the data and create the following directory structure:
    _Changes for frequency analysis implementation:_  
    * Path variables: path_ft, path_files, datapath, datafile, savefile.  
    * Subject folder names:    
-      ''' matlab
+      '''
          % Define subjects and trigger values  
          subjects = {};  
          ranges = [3:16, 18:19, 21:22, 25:29, 31:34, 36:37, 39:41, 43:45, 47, 49:54];  
@@ -43,27 +43,27 @@ Download the data and create the following directory structure:
 
 1.	Prior to frequency implementation make sure to create an induced data set, a subtraction of the epoched data set and the average evoked response for each condition per subject.
    
-3.	Run the initialization, comment out the % Atlas for reference part till end of initialization (this part is used for cluster analysis).
+2.	Run the initialization, comment out the % Atlas for reference part till end of initialization (this part is used for cluster analysis).
    
-4.	Extract baseline and post-stimulus activity and preform a fourier transform on the data, using the "calculate_freq" function.
+3.	Extract baseline and post-stimulus activity and preform a fourier transform on the data, using the "calculate_freq" function.
    
-_Notes_:   
-* Baseline and post-stimulus frequency analysis are done seperately by commenting and uncommenting the "Truncate baseline data" and "Preform baseline" sections in alternating manner.  
-* Make sure post-stimulus variable is saved as "freq" while baseline variable is saved as "freqbase" in the end of the function. "savefile" variable is changed to "freq_allcons.mat" or "freq_allconsbaseline.mat" respectively.
+  _Notes_:   
+  * Baseline and post-stimulus frequency analysis are done seperately by commenting and uncommenting the "Truncate baseline data" and "Preform baseline" sections in alternating manner.  
+  * Make sure post-stimulus variable is saved as "freq" while baseline variable is saved as "freqbase" in the end of the function. "savefile" variable is changed to "freq_allcons.mat" or "freq_allconsbaseline.mat" respectively.
   
-4.	Concatenate the analysed post-stimulus and baseline data of all subjects using the "concatenate_freqs " function. "datafile" and "savefile" variables change accordingly.
+4. Concatenate the analysed post-stimulus and baseline data of all subjects using the "concatenate_freqs " function. "datafile" and "savefile" variables change accordingly.
      
-_Note_: make sure that all variables while concatenating baseline data have the "freqbase" pattern in the variable name while the post-stimulus variables contain "freq".
+  _Note_: make sure that all variables while concatenating baseline data have the "freqbase" pattern in the variable name while the post-stimulus variables contain "freq".
   
-6.	Load baseline and post-stimulus concatenated data for normalization.
+5.	Load baseline and post-stimulus concatenated data for normalization.
    
-8.	Normalize the induced post-stimulus data using "extract_2D_power" function, take the average power across all channels per frequency and then get the average power for a specific frequency band specified as an input to the function.
+6.	Normalize the induced post-stimulus data using "extract_2D_power" function, take the average power across all channels per frequency and then get the average power for a specific frequency band specified as an input to the function.
    
-_Note_: result should be used in repeated measures ANOVA.   
+  _Note_: result should be used in repeated measures ANOVA.   
 
-10.	Plot the average power spectrum across all subjects for specific condition groups.
+7.	Plot the average power spectrum across all subjects for specific condition groups.
     
-_Note_: "condGroups" variable contains the indices of the conditions listed in "trigVal". Changing the "condGroups" variable requires also changing  " customNames" according to the conditions' groups.  
+  _Note_: "condGroups" variable contains the indices of the conditions listed in "trigVal". Changing the "condGroups" variable requires also changing  " customNames" according to the conditions' groups.  
 
 trigVal: 8 – "oddball"  
 Food: 10 – food-short repetition 1, 12 – food-medium 1, 14– food-long 1, 20 - food-short 2, 22 – food-medium 2, 24 – food-long 2.  
