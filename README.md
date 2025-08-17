@@ -29,9 +29,9 @@ Download the data and create the following directory structure:
   
 ### Frequency Analysis Implementation Steps:  
   
-_ Changes for frequency analysis implementation: _  
-* Path variables: path_ft, path_files, datapath, datafile, savefile.  
-* Subject folder names:  
+_Changes for frequency analysis implementation:_  
+   * Path variables: path_ft, path_files, datapath, datafile, savefile.  
+   * Subject folder names:  
 % Define subjects and trigger values  
 subjects = {};  
 ranges = [3:16, 18:19, 21:22, 25:29, 31:34, 36:37, 39:41, 43:45, 47, 49:54];  
