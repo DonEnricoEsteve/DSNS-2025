@@ -50,8 +50,9 @@ Download the data and create the following directory structure:
    
 3.	Extract baseline and post-stimulus activity and preform a fourier transform on the data, using the "calculate_freq" function.
    
-    _Note_:   
-    * _Baseline and post-stimulus frequency analysis are done seperately by changing the time_interval = [min max] variable and the  last input in calculate_freq to true if this is baseline and false otherwise._  
+    _Notes_:   
+    * _Baseline and post-stimulus frequency analysis are done seperately by changing the time_interval = [min max] variable and the  last input in calculate_freq to true for baseline and false otherwise._
+    * Make sure to change: freq_resul for different desired frequency resolution and the lower frequency border, and fs indicating recording sampling frequency.
   
 4. Concatenate the analysed post-stimulus and baseline data of all subjects using the "concatenate_freqs " function. "datafile" and "savefile" variables change accordingly.
    
