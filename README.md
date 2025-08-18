@@ -56,15 +56,16 @@ Download the data and create the following directory structure:
   
 4. Concatenate the analysed post-stimulus and baseline data of all subjects using the "concatenate_freqs " function. "datafile" and "savefile" variables change accordingly.
    
-    _Note: make sure that all variables while concatenating baseline data have the "freqbase" pattern in the variable name while the post-stimulus variables contain "freq"._
+    _Note: make sure load_file and save_file passed to the function match whther both regard baseline or post-stimulus. load_file is the same file that was saved
+   in "calculate_freq" function._
   
-5.	Load baseline and post-stimulus concatenated data for normalization.
+6.	Load baseline and post-stimulus concatenated data for normalization.
    
-6.	Normalize the induced post-stimulus data using "extract_2D_power" function, take the average power across all channels per frequency and then get the average power for a specific frequency band specified as an input to the function.
+7.	Normalize the induced post-stimulus data using "extract_2D_power" function, take the average power across all channels per frequency and then get the average power for a specific frequency band specified as an input to the function.
    
     _Note: result should be used in repeated measures ANOVA._   
 
-7.	Plot the average power spectrum across all subjects for specific condition groups.
+8.	Plot the average power spectrum across all subjects for specific condition groups.
     
     _Note: "condGroups" variable contains the indices of the conditions listed in "trigVal". Changing the "condGroups" variable requires also changing  " customNames" according to the conditions' groups._  
 
