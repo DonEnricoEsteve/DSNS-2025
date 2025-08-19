@@ -10,7 +10,8 @@ There were 18 conditions in the experiment, and images were categorized into 3 m
 Recordings were sampled at a rate of 1017 Hz and online band-pass filtered from 1–400 Hz. Data was preprocessed as follows: trial definition, line noise and artifact removal, low-pass filtering at 90 Hz, and ICA. The data was epoched in the time range of -0.3-0.8 s relative to event/stimuli onset.   
 
 The data used in the project is:  
-* Epoched data in a mat file named “dataorig_minus_ERF”.  
+* Epoched data in a mat file named “ICA_dataorig”.
+* Evoked data per experimental condition in a mat file "don_ERF".  
 For each of the 42 study participants.  
 
 The data for two of the 42 participants and can be found in the following link, for pipeline implementation purposes: [DSNS](https://livebiuac-my.sharepoint.com/:f:/g/personal/elizabeth_vaisman_live_biu_ac_il/EmTGDL0frsxFvlgsm3hs5woBhhSwPVyjT6H3Ak81gwvxgg?e=DkC58C)   
@@ -22,12 +23,18 @@ Download the data and create the following directory structure:
 ├───Main _Folder  
 &emsp;│   dsns_script.m  
 &emsp;├───TFR_DSNS  
-&emsp;├───sub_004  
+&emsp;├───sub_003 
+&emsp;&emsp;│   ICA_dataorig.mat  
+&emsp;&emsp;├───ERF_within  
+&emsp;&emsp;&emsp;|   don_ERF.mat
 &emsp;&emsp;├───TFR_within  
-&emsp;&emsp;│   dataorig_minus_ERF.mat  
-&emsp;└───sub_005  
+
+&emsp;└───sub_004 
+&emsp;&emsp;│   ICA_dataorig.mat  
+&emsp;&emsp;├───ERF_within 
+&emsp;&emsp;&emsp;|   don_ERF.mat
 &emsp;&emsp;├───TFR_within  
-&emsp;&emsp;│   dataorig_minus_ERF.mat  
+
 
 ### Changes in dsns_script.m for frequency analysis implementation 
  
@@ -44,10 +51,10 @@ Download the data and create the following directory structure:
    
 ### Frequency Analysis Implementation Steps  
   
-1.	Prior to frequency implementation make sure to create an induced data set, a subtraction of the epoched data set and the average evoked response for each condition per subject.
-   
-2.	Run the initialization, comment out the % Atlas for reference part till end of initialization (this part is used for cluster analysis).
-   
+1.	Run the initialization, comment out the "% Atlas for reference part" till end of initialization (this part is used for cluster analysis).
+
+2. Calculate induces data for each subject using calculate_induced, which subtract the ERF of each condition from the corresponding trials in ICA_dataorig.mat.
+    
 3.	Extract baseline and post-stimulus activity and preform a fourier transform on the data, using the "calculate_freq" function.
    
     _Notes_:   
