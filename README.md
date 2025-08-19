@@ -26,12 +26,12 @@ Download the data and create the following directory structure:
 &emsp;├───sub_003      
 &emsp;&emsp;&emsp;│&emsp;&emsp;ICA_dataorig.mat      
 &emsp;&emsp;&emsp;├───ERF_within     
-&emsp;&emsp;&emsp;&emsp;&emsp;|&emsp;&emsp;don_ERF.mat    
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|&emsp;don_ERF.mat    
 &emsp;&emsp;&emsp;├───TFR_within    
 &emsp;└───sub_004      
 &emsp;&emsp;&emsp;│&emsp;&emsp;ICA_dataorig.mat    
 &emsp;&emsp;&emsp;├───ERF_within   
-&emsp;&emsp;&emsp;&emsp;&emsp;|&emsp;&emsp;don_ERF.mat  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|&emsp;don_ERF.mat  
 &emsp;&emsp;&emsp;├───TFR_within    
 
 
