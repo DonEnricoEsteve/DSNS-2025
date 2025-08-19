@@ -21,17 +21,17 @@ _Result of the implementation is summarised in a matlab figure "resulting_fig.fi
 
 Download the data and create the following directory structure:  
 ├───Main _Folder    
-&emsp;│   dsns_script.m    
+&emsp;│&emsp;&emsp;dsns_script.m    
 &emsp;├───TFR_DSNS      
 &emsp;├───sub_003      
-&emsp;&emsp;&emsp;│   ICA_dataorig.mat      
+&emsp;&emsp;&emsp;│&emsp;&emsp;ICA_dataorig.mat      
 &emsp;&emsp;&emsp;├───ERF_within     
-&emsp;&emsp;&emsp;&emsp;&emsp;|   don_ERF.mat    
+&emsp;&emsp;&emsp;&emsp;&emsp;|&emsp;&emsp;don_ERF.mat    
 &emsp;&emsp;&emsp;├───TFR_within    
 &emsp;└───sub_004      
-&emsp;&emsp;&emsp;│   ICA_dataorig.mat    
+&emsp;&emsp;&emsp;│&emsp;&emsp;ICA_dataorig.mat    
 &emsp;&emsp;&emsp;├───ERF_within   
-&emsp;&emsp;&emsp;&emsp;&emsp;|   don_ERF.mat  
+&emsp;&emsp;&emsp;&emsp;&emsp;|&emsp;&emsp;don_ERF.mat  
 &emsp;&emsp;&emsp;├───TFR_within    
 
 
