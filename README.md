@@ -24,15 +24,15 @@ Download the data and create the following directory structure:
 &emsp;│   dsns_script.m    
 &emsp;├───TFR_DSNS      
 &emsp;├───sub_003      
-&emsp;&emsp;│   ICA_dataorig.mat      
-&emsp;&emsp;├───ERF_within     
-&emsp;&emsp;&emsp;|   don_ERF.mat    
-&emsp;&emsp;├───TFR_within    
+&emsp;&emsp;&emsp;│   ICA_dataorig.mat      
+&emsp;&emsp;&emsp;├───ERF_within     
+&emsp;&emsp;&emsp;&emsp;&emsp;|   don_ERF.mat    
+&emsp;&emsp;&emsp;├───TFR_within    
 &emsp;└───sub_004      
-&emsp;&emsp;│   ICA_dataorig.mat    
-&emsp;&emsp;├───ERF_within   
-&emsp;&emsp;&emsp;|   don_ERF.mat  
-&emsp;&emsp;├───TFR_within    
+&emsp;&emsp;&emsp;│   ICA_dataorig.mat    
+&emsp;&emsp;&emsp;├───ERF_within   
+&emsp;&emsp;&emsp;&emsp;&emsp;|   don_ERF.mat  
+&emsp;&emsp;&emsp;├───TFR_within    
 
 
 ### Changes in dsns_script.m for frequency analysis implementation 
