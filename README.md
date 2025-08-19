@@ -20,20 +20,19 @@ _Result of the implementation is summarised in a matlab figure "resulting_fig.fi
 ## Implementation
 
 Download the data and create the following directory structure:  
-├───Main _Folder  
-&emsp;│   dsns_script.m  
-&emsp;├───TFR_DSNS  
-&emsp;├───sub_003 
-&emsp;&emsp;│   ICA_dataorig.mat  
-&emsp;&emsp;├───ERF_within  
-&emsp;&emsp;&emsp;|   don_ERF.mat
-&emsp;&emsp;├───TFR_within  
-
-&emsp;└───sub_004 
-&emsp;&emsp;│   ICA_dataorig.mat  
-&emsp;&emsp;├───ERF_within 
-&emsp;&emsp;&emsp;|   don_ERF.mat
-&emsp;&emsp;├───TFR_within  
+├───Main _Folder    
+&emsp;│   dsns_script.m    
+&emsp;├───TFR_DSNS      
+&emsp;├───sub_003      
+&emsp;&emsp;│   ICA_dataorig.mat      
+&emsp;&emsp;├───ERF_within     
+&emsp;&emsp;&emsp;|   don_ERF.mat    
+&emsp;&emsp;├───TFR_within    
+&emsp;└───sub_004      
+&emsp;&emsp;│   ICA_dataorig.mat    
+&emsp;&emsp;├───ERF_within   
+&emsp;&emsp;&emsp;|   don_ERF.mat  
+&emsp;&emsp;├───TFR_within    
 
 
 ### Changes in dsns_script.m for frequency analysis implementation 
