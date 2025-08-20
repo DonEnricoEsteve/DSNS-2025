@@ -14,7 +14,7 @@ The data used in the project is:
 * Evoked data per experimental condition in a mat file "don_ERF".  
 For each of the 42 study participants.  
 
-The data for two of the 42 participants and can be found in the following link, for pipeline implementation purposes: [DSNS](https://livebiuac-my.sharepoint.com/:f:/g/personal/elizabeth_vaisman_live_biu_ac_il/EmTGDL0frsxFvlgsm3hs5woBhhSwPVyjT6H3Ak81gwvxgg?e=DkC58C)   
+The data for two of the 42 participants and can be found in the following link, for pipeline implementation purposes: https://livebiuac-my.sharepoint.com/:f:/g/personal/elizabeth_vaisman_live_biu_ac_il/EmTGDL0frsxFvlgsm3hs5woBhhSwPVyjT6H3Ak81gwvxgg?e=38BicG   
 _Result of the implementation is summarised in a matlab figure "resulting_fig.fig" and can be downloaded from the same link._
 
 ## Implementation
