@@ -85,7 +85,7 @@ function flattened_data = flat_by_channel(x) % preserve band values for each cha
     flattened_data = x_t(:).'; 
 end
 
-flatten_by_channel = @(x) flat_by_channel(x); %%%%%%%%% try this
+flatten_by_channel = @(x) flat_by_channel(x); % another option for flattening
 
 data = cellfun(flatten_by_channel, data, "UniformOutput", false); %flatten_by_band 
 
@@ -206,4 +206,4 @@ confusionMat = confusionchart(test_labels, predicted_labels, 'Normalization', 'r
 accuracy = sum(predicted_labels.' == test_labels)/numel(test_labels)*100;
 fprintf('Classifier accuracy: %.2f', accuracy)
 
-clearvars("trained_model")
+
